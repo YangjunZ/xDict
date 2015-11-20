@@ -13,7 +13,7 @@ var appTrayIcon = null;
 
 function initTray(appQuit, win){
 
-    appTrayIcon = new Tray(path.join(__dirname, '../img/dict_48x.png'));
+    appTrayIcon = new Tray(path.join(__dirname, '../img/dictionary.png'));
     var contextMenu = Menu.buildFromTemplate([
     	{
 	        label: 'Quit',

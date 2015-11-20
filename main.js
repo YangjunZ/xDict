@@ -13,7 +13,7 @@ app.on('ready', function() {
         height: 480,
         resizable: false,
         width: 320,
-        icon: 'app/img/dict_64x.png',
+        icon: 'app/img/dictionary.png',
         title: "xDict",
         resizable: false,
         show: true
