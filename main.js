@@ -19,7 +19,7 @@ app.on('ready', function() {
         show: true
     });
     mainWin.loadUrl(fileUrl("app/index.html"));
-    sysTray.initTray(appQuit, mainWin);
+    // sysTray.initTray(appQuit, mainWin);
     initShortcut();
     // mainWin.on('blur', function() {
     //     log('blur')
@@ -30,7 +30,7 @@ app.on('ready', function() {
     //     winStatus();
     // });
 
-    // setInterval(winStatus, 2000);
+    setInterval(winStatus, 2000);
 });
 
 function winStatus() {
@@ -72,12 +72,16 @@ ipc.on('hide-main-window', function() {
     mainWin.hide();
 });
 
+var Menu = require('menu');
+
 function showHideSwitch() {
     if (mainWin.isFocused() && mainWin.isVisible()) {
         // mainWin.showInactive();
         // mainWin.blur();
-        mainWin.emit('blur');
+        // mainWin.emit('blur');
+        // Menu.sendActionToFirstResponder('hide:');
         mainWin.hide();
+        // app.hide();
     } else {
         mainWin.show();
         mainWin.webContents.send('focus-on-input');
